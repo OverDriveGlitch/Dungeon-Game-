@@ -38,6 +38,8 @@ public class Main {
 
         int Monster3Health = 80;
 
+        int PlayerAttackChance;
+
 
         System.out.println("Welcome to Dungeon Quest");
         System.out.println("What is your name");
@@ -75,6 +77,12 @@ public class Main {
                 }
                 case "Attack" -> {
                     MonsterAttackChance = random.nextInt(1, 3);
+                    PlayerAttackChance = random.nextInt(1,7);
+                    if(PlayerAttackChance == 7){
+                        System.out.println(PlayerName + "has missed!");
+                    }
+
+
                     if (critical_attack_chance == 1) {
                         physicalattack1 = 2 * physicalattack1;
                         System.out.println("Critical Attack!");
@@ -158,6 +166,10 @@ public class Main {
                 }
                 case "Attack" -> {
                     MonsterAttackChance = random.nextInt(1, 3);
+                    PlayerAttackChance = random.nextInt(1,7);
+                    if(PlayerAttackChance == 7){
+                        System.out.println(PlayerName + "has missed!");
+                    }
                     if (critical_attack_chance == 1) {
                         physicalattack1 = 2 * physicalattack1;
                         System.out.println("Critical Attack!");
@@ -197,17 +209,31 @@ public class Main {
         System.out.println("Will you enter?(Yes/No)");
         decision3 = scanner.nextLine();
 
-        switch (decision3) {
+        switch (decision3){
             case "Yes" -> {
                 System.out.println("As you enter the cave you notice a Great Troll blocking your path!");
                 System.out.println("What will you do");
                 System.out.println("Attack or Run");
                 decision4 = scanner.nextLine();
                 switch (decision4) {
+
                     case "Attack" -> {
+                        MonsterAttackChance = random.nextInt();
+                        PlayerAttackChance = random.nextInt(1,7);
+                        if(PlayerAttackChance == 7){
+                            System.out.println(PlayerName + "has missed!");
+                        }
+
+                        System.out.println("You have decided to attack the monster!");
+
+
+
+
 
                     }
                     case "Run" -> {
+                        System.out.println("You have decided to run from the fight");
+
 
                         
                     }
