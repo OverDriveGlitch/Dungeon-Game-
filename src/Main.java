@@ -62,7 +62,7 @@ public class Main {
             switch (decision1) {
                 case "Run" -> {
                     System.out.println("You have run away!");
-                    continue;
+                    Monster1Health = 0;
                 }
                 case "Defend" -> {
                     MonsterAttackChance = random.nextInt(1, 3);
@@ -150,9 +150,14 @@ public class Main {
             MonsterCriticalAttack = random.nextInt(1, 5);
             Holyblade(true, physicalattack1 = random.nextInt(5,20));
 
-            System.out.println("What will you do?(Attack, Defend) ");
+            System.out.println("What will you do?(Attack, Defend, Run) ");
             decision1 = scanner.nextLine();
             switch (decision1) {
+                case "Run" -> {
+                    System.out.println("You have ran from the fight!");
+                    Monster2Health = 0;
+
+                }
                 case "Defend" -> {
                     MonsterAttackChance = random.nextInt(1, 3);
                     Defense = random.nextInt(5, 11);
@@ -239,7 +244,7 @@ public class Main {
                         }
                         case "Run" -> {
                             System.out.println("You have decided to run from the fight");
-
+                            Great_Troll_Health = 0;
 
                         }
                     }
