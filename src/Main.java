@@ -12,6 +12,8 @@ public class Main {
 
         int Monster2Health = 70;
 
+        int Great_Troll_Health = 100;
+
         int physicalattack1;
 
         int critical_attack_chance;
@@ -77,8 +79,8 @@ public class Main {
                 }
                 case "Attack" -> {
                     MonsterAttackChance = random.nextInt(1, 3);
-                    PlayerAttackChance = random.nextInt(1,7);
-                    if(PlayerAttackChance == 7){
+                    PlayerAttackChance = random.nextInt(1, 7);
+                    if (PlayerAttackChance == 7) {
                         System.out.println(PlayerName + "has missed!");
                     }
 
@@ -129,6 +131,7 @@ public class Main {
                 System.out.println("You opened the chest and received the Holy Blade! (Damage is now +5)");
                 HolyBlade = true;
 
+
             }
             case "No" -> {
                 System.out.println("You skipped the chest and moved on forth to the next town!");
@@ -145,9 +148,7 @@ public class Main {
             critical_attack_chance = random.nextInt(1, 5);
 
             MonsterCriticalAttack = random.nextInt(1, 5);
-            if (HolyBlade = true) {
-                physicalattack1 = physicalattack1 + 5;
-            }
+            Holyblade(true, physicalattack1 = random.nextInt(5,20));
 
             System.out.println("What will you do?(Attack, Defend) ");
             decision1 = scanner.nextLine();
@@ -166,8 +167,8 @@ public class Main {
                 }
                 case "Attack" -> {
                     MonsterAttackChance = random.nextInt(1, 3);
-                    PlayerAttackChance = random.nextInt(1,7);
-                    if(PlayerAttackChance == 7){
+                    PlayerAttackChance = random.nextInt(1, 7);
+                    if (PlayerAttackChance == 7) {
                         System.out.println(PlayerName + "has missed!");
                     }
                     if (critical_attack_chance == 1) {
@@ -208,43 +209,59 @@ public class Main {
         System.out.println("You have gained enough experience to enter the Great Cave");
         System.out.println("Will you enter?(Yes/No)");
         decision3 = scanner.nextLine();
+        do {
+            switch (decision3) {
+                case "Yes" -> {
+                    System.out.println("As you enter the cave you notice a Great Troll blocking your path!");
+                    System.out.println("What will you do");
+                    System.out.println("Attack or Run");
+                    decision4 = scanner.nextLine();
+                    switch (decision4) {
 
-        switch (decision3){
-            case "Yes" -> {
-                System.out.println("As you enter the cave you notice a Great Troll blocking your path!");
-                System.out.println("What will you do");
-                System.out.println("Attack or Run");
-                decision4 = scanner.nextLine();
-                switch (decision4) {
+                        case "Attack" -> {
+                            critical_attack_chance = random.nextInt();
+                            MonsterAttackChance = random.nextInt(1, 7);
+                            PlayerAttackChance = random.nextInt(1, 7);
+                            if (PlayerAttackChance == 7) {
+                                System.out.println(PlayerName + "has missed!");
+                            }
+                            if(MonsterAttackChance == 7) {
+                                System.out.println("The Great Troll has missed!");
 
-                    case "Attack" -> {
-                        MonsterAttackChance = random.nextInt();
-                        PlayerAttackChance = random.nextInt(1,7);
-                        if(PlayerAttackChance == 7){
-                            System.out.println(PlayerName + "has missed!");
+                            }
+                            if (critical_attack_chance == 1) {
+                            physicalattack1 = physicalattack1 * 2;
+                            }
+
+                            System.out.println("You have decided to attack the monster!");
+
+
                         }
-
-                        System.out.println("You have decided to attack the monster!");
-
-
+                        case "Run" -> {
+                            System.out.println("You have decided to run from the fight");
 
 
-
+                        }
                     }
-                    case "Run" -> {
-                        System.out.println("You have decided to run from the fight");
 
-
-                        
-                    }
                 }
-
+                case "No" -> {
+                    System.out.println("You have decided to not enter the Great Cave!");
+                }
             }
-            case "No" -> {
-                System.out.println("You have decided to not enter the Great Cave!");
-            }
-        }
 
+
+        }while((PlayerHealth > 0) || (Great_Troll_Health > 0 ));
+    }
+
+    public static int Holyblade(Boolean HolyBlade,int physicalattack1) {
+
+        if(HolyBlade = true);
+        physicalattack1 = physicalattack1 + 5;
+        return physicalattack1;
+    }
+
+    {
 
     }
 }
